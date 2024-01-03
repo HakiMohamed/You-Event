@@ -7,7 +7,7 @@ class Database {
     private $host = "localhost";
     private $user = "root";
     private $password = "";
-    private $database = "youevent";
+    private $database = "myevent";
     private $conn;
 
     public function __construct() {
@@ -20,7 +20,6 @@ class Database {
             die("Connection failed: " . $e->getMessage());
         }
     }
-
     public function getConnection() {
         return $this->conn;
     }

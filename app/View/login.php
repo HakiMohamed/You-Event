@@ -1,34 +1,32 @@
-<?php  include_once '../app/View/includes/head.php'  ?>
+<!DOCTYPE html>
+<html lang="en">
+    <?php include_once '../app/View/layout/head.php'; ?>
 <body>
-<div class="container  d-flex justify-content-center w-full mt-8" style="height: 600px;">
-    <div class="d-flex mt-8 w-full col-md-4 align-items-center">
-        <form class="form-control shadow" id="formular" action="auth/loginUser" method="post" novalidate>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please enter your email address.</div>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please enter your password.</div>
-            </div>
-            <div class="mb-3">
-                <button class="btn btn-primary" name="submit" value="login" type="submit">Se connecter</button>
-            </div>
-            <div class="mt-3">
-            <p>If you don't have an account, <a href="auth/regester">create one</a>.</p>
-        </div>
-        </form>
-       
+  <form action="">
+    <h2>login</h2>
+    
+
+
+    <div class="form-group email">
+      <label for="email">Email </label>
+      <input type="text" id="email" placeholder="Entere email ">
+      <small class="error-text"></small>
     </div>
-</div>
-  
+   
+    <div class="form-group password">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="entrer password">
+      <i id="pass-toggle-btn" class="fa-solid fa-eye"></i>
+      <small class="error-text"></small>
+    </div>
+    <div class="form-group submit-btn">
+      <input type="submit" value="login">
+    </div>
+    <p>sign up 
+      <a href="?uri=/register">register</a>
+    </p>
+  </form>
+
+  <script src="../asset/js/authValidation.js"></script>
 </body>
-
-
-
-
-
+</html>
