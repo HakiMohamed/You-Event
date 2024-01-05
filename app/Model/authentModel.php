@@ -8,7 +8,8 @@ use PDO ;
 class AuthentModel {
     private $db;
 
-    protected $name;
+    protected $first_name;
+    protected $last_name;
     protected $email;
     protected $password;
     protected $id_role;
@@ -17,8 +18,11 @@ class AuthentModel {
         $this->db = new Database();
     }
 
-    public function getName() {
-        return $this->name;
+    public function getfirstName() {
+        return $this->first_name;
+    }
+    public function getlastName() {
+        return $this->last_name;
     }
     public function getEmail() {
         return $this->email;
@@ -27,11 +31,14 @@ class AuthentModel {
         return $this->password;
     }
     public function getIdRole(){
-        return $this->id_role=$id_role;
+        return $this->id_role;
     }
 
-    public function setName($name) {
-        $this->name = $name;
+    public function setfirstName($first_name) {
+        $this->first_name = $first_name;
+    }
+    public function setlastName($last_name) {
+        $this->last_name = $last_name;
     }
     public function setEmail($email) {
         $this->email = $email;
@@ -45,9 +52,9 @@ class AuthentModel {
 
 
     public function register(){
-        $query= "INSERT INTO utilisateurs(name,email,password,id_role) VALUES (?,?,?,?)";
+        $query= "INSERT INTO utilisateurs(name,email,password,id_role) VALUES (?,?,?,?,?)";
         $stmt = $this->db->getConnection()->prepare($query);
-        stms ->execute([$this->name,$this->email,$this->password,$this->id_role]);
+        $stmt->execute([$this->first_name,$this->last_name,$this->email,$this->password,$this->id_role]);
         return $stmt;
      
     }
